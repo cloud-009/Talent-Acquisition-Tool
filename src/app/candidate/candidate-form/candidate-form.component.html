@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="title">
+    <p class="title-head">Create Candidate</p>
+    <button class="title-button" routerLink="/candidate/allcandidates">All Candidates</button>
+  </div>
+  <div class="content">
+    <form [formGroup]="candidateForm">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">First Name</span>
+          <input type="text" formControlName="firstName" placeholder="Harry">
+        </div>
+        <div class="input-box">
+          <span class="details">Last Name</span>
+          <input type="text" formControlName="lastName" placeholder="Styles">
+        </div>
+        <div class="input-box">
+          <span class="details">Experience(years)</span>
+          <input type="number" formControlName="experience" placeholder="3 (or) 4">
+        </div>
+        <div class="input-box">
+          <span class="details">Email ID</span>
+          <input type="email" formControlName="email" placeholder="harry.styles@gmail.com">
+        </div>
+        <div class="input-box">
+          <span class="details">Contact Info</span>
+          <input type="text" formControlName="contactInfo" placeholder="9876543210">
+        </div>
+        <div class="input-box">
+          <span class="details">Notice Period (days)</span>
+          <input type="number" formControlName="noticePeriod" placeholder="30 (or) 60">
+        </div>
+        <div class="input-box">
+          <span class="details">Current CTC</span>
+          <input type="text" formControlName="currentCTC" placeholder="5,00,000">
+        </div>
+        <div class="input-box">
+          <span class="details">Expected CTC</span>
+          <input type="text" formControlName="expectedCTC" placeholder="10,00,000">
+        </div>
+        <div class="input-box">
+          <span class="details">Current Location</span>
+          <input type="text" formControlName="currentLocation" placeholder="Bangalore">
+        </div>
+        <div class="input-box">
+          <span class="details">Preffered Location</span>
+          <input type="text" formControlName="preferredLocation" placeholder="Pune">
+        </div>
+        <div class="input-box">
+          <span class="details">Applied For</span>
+          <input type="text" formControlName="appliedFor" placeholder="Senior Software Engineer">
+        </div>
+        <div class="input-box"><span class="details">Recommendation</span>
+          <input type="text" formControlName="recommendation" placeholder="Emilia Clarke">
+        </div>
+        <div class="input-box">
+          <span class="details">Primary-Skill</span>
+          <input type="text" formControlName="primarySkill" placeholder="Azure, AWS">
+        </div>
+        <div class="input-box">
+          <span class="details">Secondary Skill</span>
+          <input type="text" formControlName="secondarySkill" placeholder="Python, AI/ML">
+        </div>
+        <div class="input-box">
+          <span class="details">Created Date</span>
+          <input type="date" formControlName="createdDate">
+        </div>
+        <div class="input-box">
+          <span class="details">File-Upload</span>
+          <input type="file" formControlName="fileUpload">
+        </div>
+        <div class="input-box">
+          <span class="details">Summary</span>
+          <input type="text" formControlName="summary" placeholder="Worked in frontend team for 4 years">
+        </div>
+        <div class="input-box">
+          <span class="details">Hiring Manager</span>
+          <input type="text" formControlName="hiringManager" placeholder="Hyun Datsun">
+        </div>
+      </div>
+      <div class="button">
+        <button type="button" class="button-cancel" routerLink="/candidate/allcandidates">Cancel</button>
+        <button type="button" class="button-submit" (click)="submitFormData()">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

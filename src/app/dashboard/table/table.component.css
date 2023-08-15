@@ -1,0 +1,98 @@
+.top-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.jobid {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #737373;
+}
+
+.jobtitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4d4d4d;
+}
+
+.manager {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4d4d4d;
+}
+
+.description {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4d4d4d;
+}
+
+.dateposted {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4d4d4d;
+}
+
+.table-row:nth-child(2n) {
+    background-color: #eff5f5;
+}
+
+.head-top{
+    color: #fafafa;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.head {
+    margin-top: 3rem;
+}
+.btn {
+    margin-top: 3rem;
+}
+input, span {
+    margin-top: 3rem;
+}
+.badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 7px 20px;
+    border-radius: 10px;
+}
+
+.heading-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.export{
+    margin-bottom: 15px;
+}
+
+.input-group {
+    width: 350px;
+}
+
+.heading{
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: var(--job-head);
+    padding: 8px 20px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+@media only screen and (max-width: 700px){
+    .heading{
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 4px;
+    }
+
+    .btn{
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 4px;
+    }
+  }

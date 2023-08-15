@@ -1,0 +1,348 @@
+<div class="Main-Container">
+  <div class="container" *ngFor="let x of candidatesData">
+    <div class="info" *ngIf="x.id == candidateID">
+      <mat-card class='mat1' style="height: 113px;">
+        <div class="name">
+          <h2>{{x.firstName}} {{x.lastName}}</h2>
+        </div>
+
+        <div class="details1">
+          <span class="emaildetails"><i style="font-size:15px;color:#E41B17;" class="fa mx-2" id="email">&#xf0e0;</i>
+            <div class="emaildata">{{x.email}}</div>
+          </span>
+          <span class="contactdetails"><i style="font-size:15px;color:green;" class="fa mx-2" id="contact">&#xf095;</i>
+            <div class="contactdata">+91-{{x.contactInfo}}</div>
+          </span>
+          <span class="location"><i class='fas fa-map-marker-alt' style='font-size:16px;color: #E41B17;'></i>
+            {{x.currentLocation}}</span>
+          <span class="downloadbtn">Resume{{x.resume}}<i
+              style="font-size:15px;color: rgb(243, 236, 236);cursor: pointer;" (click)="downloadMyFile()"
+              class="fa mx-2">&#xf019;</i></span>
+        </div>
+
+        <div>
+          <table class="table mat1">
+            <tr>
+              <th style="width: 17%;" scope="col">Applied For</th>
+              <th>Current CTC</th>
+              <th>Expected CTC</th>
+              <th>Total Experience</th>
+              <th style="width: 20%;">Recommendation(if any)</th>
+              <th>Notice Period</th>
+            </tr>
+            <tbody>
+              <td style="cursor: pointer;" scope="col" (click)="routeToRequisition(x.id)">{{x.appliedFor}}</td>
+              <td>{{x.currentCTC}}</td>
+              <td>{{x.expectedCTC}}</td>
+              <td>{{x.experience}} Years</td>
+              <td>{{x.recommendation}}</td>
+              <td>{{x.noticePeriod}} Days</td>
+            </tbody>
+          </table>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="mat-stepper">
+    <mat-card>
+      <mat-horizontal-stepper *ngFor="let step of accordian" style="font-size: 14px;height: 100px;"
+        labelPosition="bottom" #stepper>
+        <mat-step state="done" [completed]="step.screen=='Completed'">
+          <ng-template matStepLabel>Screening</ng-template>
+          <ng-template matStepperIcon="edit" matStepLabel>1</ng-template>
+        </mat-step>
+        <mat-step [completed]="step.short=='Completed'">
+          <ng-template matStepLabel>Shortlisting</ng-template>
+        </mat-step>
+        <mat-step [completed]="step.qualitative=='Completed'">
+          <ng-template matStepLabel>Qualitative</ng-template></mat-step>
+        <mat-step [completed]="step.behavioural=='Completed'">
+          <ng-template matStepLabel>Behavioural</ng-template></mat-step>
+        <mat-step [completed]="step.video=='Completed'">
+          <ng-template matStepLabel>Video</ng-template></mat-step>
+        <mat-step [completed]="step.interview1=='Completed'">
+          <ng-template matStepLabel>Interview1</ng-template></mat-step>
+        <mat-step [completed]="step.interview2=='Completed'">
+          <ng-template matStepLabel>Interview2</ng-template></mat-step>
+        <mat-step [completed]="step.hr=='Completed'">
+          <ng-template matStepLabel>HR</ng-template></mat-step>
+        <mat-step [completed]="step.documentation=='Completed'">
+          <ng-template matStepLabel>Documentation</ng-template>
+        </mat-step>
+        <mat-step [completed]="step.offer=='Completed'">
+          <ng-template matStepLabel>Offer</ng-template>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </mat-card>
+  </div>
+
+
+
+  <!-- ----------------------MatAccodrain----------------------------------------------- -->
+
+  <div class="MatAccordian" style="margin-top: -2rem;">
+    <div class="container">
+      <form [formGroup]="firstGroup">
+        <mat-accordion style="margin-bottom: 10px;">
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <!-- <h3 class="num">1</h3> -->
+                <h3>Screening</h3>
+                <h4>{{screen}}</h4>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-radio-group color="primary" aria-label="Select an option" formControlName="screen"
+              [(ngModel)]="screen">
+              <mat-radio-button value="Completed">Yes</mat-radio-button>
+              <mat-radio-button value="Pending">No</mat-radio-button>
+            </mat-radio-group>
+            <div class="skbutton">
+              <button *ngIf="screen=='' && screen==''" mat-button color="primary" (click)="showBasicDialog()">Skip
+                <i class="fa fa-forward"></i></button>
+              <!-- <button mat-button color="primary" (click)="nextStep()">Next</button> -->
+              <button *ngIf="screen!=''" mat-button color="primary" (click)="radioButton('screen')">Clear</button>
+              <button mat-button color="primary" (click)="updateAccordian()">Update</button>
+            </div>
+
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="step === 1" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <!-- <h3 class="num">2</h3> -->
+                <h3>Shortlisting </h3>
+                <h4>{{short}}</h4>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-radio-group color="primary" aria-label="Select an option" formControlName="short" [(ngModel)]="short">
+              <mat-radio-button value="Completed">Yes</mat-radio-button>
+              <mat-radio-button value="Pending">No</mat-radio-button>
+            </mat-radio-group>
+            <div class="skbutton">
+              <button *ngIf="short=='' && short==''" mat-button color="primary" (click)="showBasicDialog()">Skip<i
+                  class="fa fa-forward"></i></button>
+              <!-- <button mat-button color="primary" (click)="nextStep()">Next</button> -->
+              <button *ngIf="short!=''" mat-button color="primary" (click)="radioButton('short')">Clear</button>
+              <button mat-button color="primary" (click)="updateAccordian()">Update</button>
+
+            </div>
+
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 2" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <!-- <h3 class="num">3</h3> -->
+                <h3>Qualitative Assessment</h3>
+                <h4>{{qualitative}}</h4>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <mat-radio-group color="primary" aria-label="Select an option" formControlName="qualitative"
+              [(ngModel)]="qualitative">
+              <mat-radio-button value="Completed">Yes</mat-radio-button>
+              <mat-radio-button value="Pending">No</mat-radio-button>
+            </mat-radio-group>
+            <div class="skbutton">
+              <button *ngIf="qualitative=='' && qualitative==''" mat-button color="primary"
+                (click)="showBasicDialog()">Skip <i class="fa fa-forward"></i></button>
+              <!-- <button mat-button color="primary" (click)="nextStep()">Next</button> -->
+              <button *ngIf="qualitative!=''" mat-button color="primary"
+                (click)="radioButton('qualitative')">Clear</button>
+              <button mat-button color="primary" (click)="updateAccordian()">Update</button>
+
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 3" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <!-- <h3 class="num">4</h3> -->
+                <h3>Behavioural Assessment</h3>
+                <h4>{{behavioural}}</h4>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <mat-radio-group color="primary" aria-label="Select an option" formControlName="behavioural"
+              [(ngModel)]="behavioural">
+              <mat-radio-button value="Completed">Yes</mat-radio-button>
+              <mat-radio-button value="Pending">No</mat-radio-button>
+            </mat-radio-group>
+            <div class="skbutton">
+              <button *ngIf="behavioural=='' && behavioural==''" mat-button color="primary"
+                (click)="showBasicDialog()">Skip <i class="fa fa-forward"></i></button>
+              <!-- <button mat-button color="primary" (click)="nextStep()">Next</button> -->
+              <button *ngIf="behavioural!=''" mat-button color="primary"
+                (click)="radioButton('behavioural')">Clear</button>
+              <button mat-button color="primary" (click)="updateAccordian()">Update</button>
+
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 4" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <!-- <h3 class="num">5</h3> -->
+                <h3>Video Assessment </h3>
+                <h4>{{video}}</h4>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <mat-radio-group color="primary" aria-label="Select an option" formControlName="video" [(ngModel)]="video">
+              <mat-radio-button value="Completed">Yes</mat-radio-button>
+              <mat-radio-button value="Pending">No</mat-radio-button>
+            </mat-radio-group>
+            <div class="skbutton">
+              <button *ngIf="video=='' && video==''" mat-button color="primary" (click)="showBasicDialog()">Skip <i
+                  class="fa fa-forward"></i></button>
+              <!-- <button mat-button color="primary" (click)="nextStep()">Next</button> -->
+              <button *ngIf="video!=''" mat-button color="primary" (click)="radioButton('video')">Clear</button>
+              <button mat-button color="primary" (click)="updateAccordian()">Update</button>
+
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 5" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <!-- <h3 class="num">6</h3> -->
+                <h3>Interview 1 </h3>
+                <h4>{{interview1}}</h4>
+
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+
+            <h3>Have You Completed the Interview 1 Process ?</h3>
+            <mat-radio-group color="primary" aria-label="Select an option" formControlName="interview1"
+              [(ngModel)]="interview1">
+              <mat-radio-button value="Completed">Yes</mat-radio-button>
+              <mat-radio-button value="Pending">No</mat-radio-button>
+            </mat-radio-group>
+            <div class="skbutton">
+              <button *ngIf="interview1=='' && interview1==''" mat-button color="primary"
+                (click)="showBasicDialog()">Skip
+                <i class="fa fa-forward"></i></button>
+              <!-- <button mat-button color="primary" (click)="nextStep()">Next</button> -->
+              <button *ngIf="interview1!=''" mat-button color="primary"
+                (click)="radioButton('interview1')">Clear</button>
+              <button mat-button color="primary" (click)="updateAccordian()">Update</button>
+
+            </div>
+
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="step === 6" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <!-- <h3 class="num">7</h3> -->
+                <h3>Interview 2 </h3>
+                <h4>{{interview2}}</h4>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <h3>Have You Completed the Interview 2 Process ?</h3>
+            <mat-radio-group color="primary" aria-label="Select an option" formControlName="interview2"
+              [(ngModel)]="interview2">
+              <mat-radio-button value="Completed">Yes</mat-radio-button>
+              <mat-radio-button value="Pending">No</mat-radio-button>
+            </mat-radio-group>
+            <div class="skbutton">
+              <!-- <button mat-button color="primary" (click)="nextStep()">Next</button> -->
+              <button *ngIf="interview2!=''" mat-button color="primary"
+                (click)="radioButton('interview2')">Clear</button>
+              <button mat-button color="primary" (click)="updateAccordian()">Update</button>
+
+            </div>
+
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="step === 7" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <!-- <h3 class="num">8</h3> -->
+                <h3>HR Interview</h3>
+                <h4>{{hr}}</h4>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <h3>Have You Completed the HR Interview Process ?</h3>
+            <mat-radio-group color="primary" aria-label="Select an option" formControlName="hr" [(ngModel)]="hr">
+              <mat-radio-button value="Completed">Yes</mat-radio-button>
+              <mat-radio-button value="Pending">No</mat-radio-button>
+            </mat-radio-group>
+            <div class="skbutton">
+              <!-- <button mat-button color="primary" (click)="nextStep()">Next</button> -->
+              <button *ngIf="hr!=''" mat-button color="primary" (click)="radioButton('hr')">Clear</button>
+              <button mat-button color="primary" (click)="updateAccordian()">Update</button>
+
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="step === 8" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <!-- <h3 class="num">9</h3> -->
+                <h3> Documentation </h3>
+                <h4>{{documentation}}</h4>
+
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-radio-group color="primary" aria-label="Select an option" formControlName="documentation"
+              [(ngModel)]="documentation">
+              <mat-radio-button value="Completed">Yes</mat-radio-button>
+              <mat-radio-button value="Pending">No</mat-radio-button>
+            </mat-radio-group>
+            <div class="skbutton">
+              <!-- <button mat-button color="primary" (click)="nextStep()">Next</button> -->
+              <button *ngIf="documentation!=''" mat-button color="primary"
+                (click)="radioButton('documentation')">Clear</button>
+              <button mat-button color="primary" (click)="updateAccordian()">Update</button>
+
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="isExpanded" [expanded]="step === 9" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <!-- <h3 class="num">10</h3> -->
+                <h3> Offer </h3>
+                <h4>{{offer}}</h4>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-radio-group color="primary" aria-label="Select an option" formControlName="offer" [(ngModel)]="offer">
+              <mat-radio-button value="Completed">Yes</mat-radio-button>
+              <mat-radio-button value="Pending">No</mat-radio-button>
+            </mat-radio-group>
+            <div class="skbutton">
+              <button *ngIf="offer!=''" mat-button color="primary" (click)="radioButton('offer')">Clear</button>
+              <button mat-button color="primary" (click)="updateAccordian()">Update</button>
+
+            </div>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+      </form>
+    </div>
+    <!-- -------- Skip Button------------------ -->
+    <p-dialog header="Reason for Skip Over" [(visible)]="displayBasic" [style]="{width: '360px',height:'224px'}">
+      <div class="mini-container">
+
+        <form action="">
+          <div class="mb-3 mt-3">
+            <input type="text" style="width: 300px;padding-left: 9px;" class="form-control"
+              placeholder="Enter Reason For Skip" name="skip">
+          </div>
+          <div>
+            <button style="float: right;" type="button" class="btn btn-primary" (click)="closeDialog()">Submit</button>
+          </div>
+        </form>
+      </div>
+    </p-dialog>
+  </div>
+</div>

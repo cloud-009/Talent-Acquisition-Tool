@@ -1,0 +1,413 @@
+.card-container {
+    width: 96.5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 10px auto;
+}
+
+.active-link {
+    background-color: var(--job-head);
+    color: #fff;
+}
+
+
+.icon {
+    float: right;
+}
+
+.card1 {
+    width: 96.5%;
+    text-align: center;
+}
+
+.card-header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    background-color: #fff;
+    text-align: left;
+    background-color: var(--job-head);
+    color: #fff;
+}
+
+.top-title {
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4d4d4d;
+}
+
+.card-layout {
+    display: flex;
+}
+
+
+
+.date {
+    font-size: 15px;
+    margin-top: -0.1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.number {
+    margin-top: -0.1rem;
+    font-weight: bold;
+
+}
+
+.card-childs {
+    width: 200px;
+    min-height: 50px;
+    text-align: center;
+}
+
+
+.sub-card {
+    width: 500px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: small;
+
+}
+
+.card5 {
+    display: flex;
+    min-width: 100px;
+    height: 70px;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+}
+
+.card-container6 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 96.5%;
+    margin: 8px auto 0;
+}
+
+.highlighted {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.right-btn {
+    color: white;
+    background-color: var(--job-head);
+    margin: 0 0 10px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 96.5%;
+    height: 60px;
+    margin: 15px auto 0;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px auto;
+}
+
+.job {
+    margin-top: 20px;
+    margin-left: 18px;
+}
+
+.middle-container {
+    width: 96.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    background-color: rgba(103, 137, 131, 0.3);
+    border-bottom: 2px solid 678983;
+    border-radius: 5px;
+
+}
+
+.candidate-create {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Signika Negative', sans-serif;
+    letter-spacing: 1px;
+    background-color: var(--job-head);
+    color: white;
+    box-shadow: 3px 3px 6px;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.right-create>.candidate-create:hover {
+
+    color: white;
+}
+
+.right-create>.candidate-create:active {
+
+    color: white;
+}
+
+.same-card {
+    border-right: 2px solid #eee;
+    width: 50%;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.head {
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.same-card:active {
+    background-color: var(--job-head);
+    color: white;
+}
+
+.head:active {
+    background-color: var(--job-head);
+    color: white;
+}
+
+.table-font {
+    font-size: 1.2rem;
+    color: #4d4d4d;
+    font-weight: 600;
+
+}
+
+.bold-weight {
+    font-weight: bold;
+    transition: scale 300ms ease-in;
+    cursor: pointer;
+    color: #1a1a1a;
+}
+
+.bold-weight:hover {
+    transform: scale(0.9);
+    color: #1a1a1a;
+}
+
+.one-line {
+
+    display: flex;
+}
+
+
+.font {
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+    float: right;
+    margin-top: -2rem;
+
+}
+
+.card-container6 .card .highlighted {
+    background-color: var(--job-head);
+}
+
+
+.content {
+    background-color: white;
+    height: 60px;
+
+}
+
+.content {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.show1 {
+    display: block;
+}
+
+.content1 {
+    display: none;
+}
+
+.text-size {
+    font-size: 25px;
+}
+
+.tabformat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.letter {
+    font-weight: bold;
+}
+
+.linkActive {
+    background-color: rgba(103, 137, 131, 1);
+    color: white;
+}
+
+.routing-tabs {
+    width: 100%;
+    margin: 0;
+}
+
+
+.middle-card {
+    text-align: left;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.middle-text {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: 15px;
+    color: #4d4d4d;
+}
+
+/* Responsive design for smaller screens */
+@media only screen and (max-width: 767px) {
+    .card-container {
+        flex-direction: column;
+    }
+
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .middle-container {
+        width: 100%;
+    }
+
+    .card5 {
+        width: 100%;
+    }
+
+    .card-container6 {
+        flex-direction: column;
+    }
+}
+
+/* Responsive design for medium screens */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .card-container {
+        width: 100%;
+    }
+
+    .card1 {
+        width: 100%;
+    }
+
+    .card-childs {
+        width: 100%;
+    }
+
+    .sub-card {
+        width: 100%;
+    }
+
+    .middle-container {
+        width: 100%;
+    }
+
+    .card5 {
+        width: 100%;
+    }
+
+    .card-container6 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .card-container {
+        flex-direction: column;
+    }
+
+    .card-layout {
+        flex-direction: column;
+    }
+
+    .card-childs {
+        width: 100%;
+    }
+
+    .sub-card {
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .middle-container {
+        flex-direction: column;
+    }
+}
+
+
+.card_haed {
+
+    font-size: 1rem !important;
+}
+
+
+@media screen and (max-width:300px) {
+
+
+    .card-container {
+
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .card5 {
+        width: 10%;
+    }
+
+
+
+
+}

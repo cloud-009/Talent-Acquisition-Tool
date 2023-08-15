@@ -1,0 +1,64 @@
+<div class="top-container">
+    <div class="card-one">
+        <div class="heading">
+            <p class="text-size">Basic Information</p>
+        </div>
+        <div class="content" [class.show]="show">
+            <div class="tabformat">
+                <div>
+                    <p class="head-text">Organization Unit </p>
+                    <p class="head-text">Designation</p>
+                    <p class="head-text">Functional Area</p>
+                    <p class="head-text">Project</p>
+                    <p class="head-text">Experience</p>
+                    <p class="head-text">Vacancy Count</p>
+                </div>
+                <div>
+                    <div class="letter" *ngFor="let x of jsonData">
+                        <div *ngIf="x.id == this.idPassed.id">
+                            <p class="head-data">{{x.organizationUnit}}</p>
+                            <p class="head-data">{{x.designation}}</p>
+                            <p class="head-data">{{x.functionalArea}}</p>
+                            <p class="head-data">{{x.project}}</p>
+                            <p class="head-data">{{x.experience}} Years</p>
+                            <p class="head-data">{{x.vacancyCount}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-two">
+        <div class="heading">
+            <p class="text-size">Organisational Data</p>
+        </div>
+        <div class="content" [class.show1]="show1">
+            <div class="tabformat">
+                <div>
+                    <p class="head-text">Requisition type</p>
+                    <p class="head-text">No of openings</p>
+                    <p class="head-text">Requisition starting date</p>
+                    <p class="head-text">Requisition Closing date</p>
+                    <p class="head-text">Hiring Manager</p>
+                    <p class="head-text">CTC Range</p>
+                </div>
+                <div>
+                    <div class="letter" *ngFor="let x of jsonData">
+                        <div *ngIf="x.id == this.idPassed.id">
+                            <p class="head-data">Requisition type</p>
+                            <p class="head-data">10</p>
+                            <p class="head-data">{{x.raisedFDate | date}}</p>
+                            <p class="head-data">{{x.raisedTDate | date}}</p>
+                            <p class="head-data">{{x.hiringManager}}</p>
+                            <p class="head-data">10 - 15 LPA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>

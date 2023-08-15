@@ -1,0 +1,19 @@
+<div class="outer-container">
+    <div class="container">
+        <form name="form1" class="box" [formGroup]="loginForm">
+            <h4>Talent Acquisition<span></span></h4>
+            <h5>Sign in to your account.</h5>
+            <input type="text" formControlName="email" name="email" placeholder="Email" autocomplete="off">
+            <!-- <div style="margin-top: -25px;" 
+                class="red">Email is required 
+            </div> -->
+            <input type="password" formControlName="password" name="password" placeholder="Passsword" id="pwd">
+            <!-- <div style="margin-top: -25px;"
+                class="red">Password is required
+            </div> -->
+            <button type="submit" class="btn btn-primary" id="click" (click)="loginToDashboard()">Login</button>
+        </form>
+    </div>
+</div>
+
+

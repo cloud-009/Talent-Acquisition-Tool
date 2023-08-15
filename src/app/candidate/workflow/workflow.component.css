@@ -1,0 +1,224 @@
+.mat1 {
+  max-width: 100%;
+  background-color: var(--candidate-head);
+  color: white;
+  margin-top: 5px;
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+h2 {
+  margin-bottom: 40px;
+  font-size: 17px;
+  padding: 5px;
+
+}
+
+tr {
+  border: 1px solid lightgrey;
+  border-collapse: separate;
+  font-size: 17px;
+}
+
+td {
+  border: 1px solid lightgray;
+  border-collapse: separate;
+  font-size: 17px;
+}
+
+
+::ng-deep .material-icons {
+  font-family: 'Material Icons' !important;
+}
+
+.name {
+  margin-right: 30px;
+  padding-left: 8px;
+}
+
+.mat-stepper {
+  width: 94.5%;
+
+  flex: 1px 1px 200px;
+  box-shadow: 2px lightgrey;
+  margin: 10px auto 0;
+  height: 130px;
+}
+
+.emaildata {
+  display: inline;
+  font-size: 18px;
+}
+
+.contactdata {
+  display: inline;
+  font-size: 18px;
+
+}
+
+.locationdata {
+  display: inline;
+  font-size: 18px;
+
+}
+
+.resumedata {
+  display: inline;
+  font-size: 18px;
+
+}
+
+.detail {
+  display: flex;
+  justify-content: space-around;
+  color: black;
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+th {
+  font-weight: 400;
+  align-content: center;
+  justify-content: center;
+  width: fit-content;
+  border: 1px solid lightgray;
+  border-collapse: separate;
+  font-size: 17px;
+
+}
+
+.td {
+  font-weight: 300;
+}
+
+.container1 {
+  margin-top: 4px;
+}
+
+.details1 {
+  justify-content: space-around;
+  display: flex;
+  font-weight: 400;
+  font-size: 17px;
+  margin-right: 20px;
+  margin-top: -70px;
+  display: inline-flex;
+  margin-left: 140px;
+
+}
+
+.dot {
+  color: green;
+  font-size: medium;
+}
+
+h3 {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+::ng-deep .mat-horizontal-stepper-header {
+  pointer-events: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .info {
+    /* margin-bottom: 30px; */
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  .details1 {
+    font-size: initial;
+  }
+}
+
+@media only screen and (min-width:426px) and (max-width:768px) {
+  .details1 {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width:425px) {
+  #email {
+    display: inline;
+  }
+
+  .emaildetails {
+    margin-top: 2rem;
+    margin-right: 48px;
+  }
+}
+
+/* //-----------------------Mat-Accordian-------------------------------- */
+.container {
+  margin-top: 18px;
+  box-shadow: 0px lightgrey;
+  width: 100%;
+  flex-direction: row;
+
+}
+
+mat-expansion-panel-header {
+  height: 45px;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.status {
+  float: right;
+}
+
+h4 {
+  margin-left: 2px;
+  margin-top: 12px;
+  color: red;
+}
+
+h3 {
+  font-size: 19px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+.skbutton {
+  display: flex;
+  flex-direction: row;
+  float: right;
+}
+
+.mini-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+
+.status {
+  margin-top: 30px;
+}
+
+:host ::ng-deep .p-dialog-header-close-icon {
+  color: black;
+  font-size: 1.3rem;
+}
+
+:host ::ng-deep .p-dialog-header-close-icon:hover {
+  color: white;
+  background-color: rgba(255, 0, 0, 0.877);
+}
+
+.Submit {
+  display: block;
+  flex-direction: row;
+}

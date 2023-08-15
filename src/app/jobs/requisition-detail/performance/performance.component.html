@@ -1,0 +1,35 @@
+<div class="top-container">
+  <table class="table">
+    <thead style="background-color: var(--job-head);">
+      <tr>
+        <th>Job-ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Experience</th>
+        <th>Recommendation</th>
+        <th>Current Location</th>
+        <th>Preferred Location</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of candidatesData  | screen : searchText  | paginate: { itemsPerPage: 4, currentPage: p } ">
+      <ng-container>
+        <tr class="table-row" class="dateposted" (click)="routeToWorkflow(user.id)">
+          <td class="jobid">{{user.jobId}}</td>
+          <td class="First Name">{{ user.fname }} </td>
+          <td class="Last Name">{{ user.lname}}</td>
+          <td class="Experience">{{ user.experience }}</td>
+          <td class="role">{{ user.recommendation}}</td>
+          <td class="role">{{user.currentLocation}}</td>
+          <td class="role">{{user.preferredLocation}}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

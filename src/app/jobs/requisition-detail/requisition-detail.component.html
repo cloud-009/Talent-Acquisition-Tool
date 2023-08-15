@@ -1,0 +1,56 @@
+<div *ngFor="let x of getFormData">
+  <div *ngIf="x.id==gridRequisitionID.id">
+    <div class="card-container">
+      <div class="card card1">
+        <div class="card-header">{{x.jobTitle}}
+        </div>
+        <div class="card-layout">
+          <div class="middle-card 2card-childs sub-card">
+            <p class="middle-text">{{x.project}} | {{x.organizationUnit}} | {{x.jobLocation}}</p>
+          </div>
+          <div class="card card-childs">
+            <p>Posted On</p>
+            <p class="date">{{x.raisedFDate | date}}</p>
+          </div>
+          <div class="card card-childs">
+            <p>Target Date</p>
+            <p class="date">{{x.raisedTDate | date}}</p>
+          </div>
+          <div class="card card-childs">
+            <p>Team <br /></p>
+            <p class="number">{{x.team }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-create">
+        <button class="candidate-create" routerLink="/candidate/candidateform">create candidate</button>
+      </div>
+    </div>
+    <div class="card-container6">
+      <div class="card card5" *ngFor="let card of cardsArray; let i as index ">
+        <div [ngClass]="{ 'highlighted': i === isHighlighted }">
+          <p class="table-font">{{card.count}}</p>
+          <p class="bold-weight" (click)="highlight(i);sendScreening(x.id, card.title)">{{card.title}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="middle-container">
+      <div class="first-card same-card" (click)="routeToJobDetails(x.id)" [class.active-link]="isRouteActive('jobdet')">
+        <p class="head">Job
+          Details
+        </p>
+      </div>
+
+      <div class="second-card same-card" (click)="routeToCandidateDetails(x.id)"
+        [class.active-link]="isRouteActive('perfm')">
+        <p class="head card_haed">Candidates Details
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="routing-tabs">
+  <router-outlet></router-outlet>
+</div>

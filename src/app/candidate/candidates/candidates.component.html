@@ -1,0 +1,60 @@
+<div class="create-container">
+    <div class="left-create">
+        <p class="create-job">All Candidates</p>
+    </div>
+    <div class="right-create">
+        <button class="candidate-create" routerLink="/candidate/candidateform">create candidate</button>
+    </div>
+</div>
+
+<div class="top-container">
+    <div class="card-container" *ngFor="let x of jsonData" (click)="workflowCandidate(x.id)">
+        <div class="top-card">
+            <div class="card-title">
+                <div class="name-group">
+                    <p class="title">{{x.firstName}}</p>
+                    <p class="title">{{x.lastName}}</p>
+                </div>
+                <p class="job-id">Applied For: <span class="job-applied">{{x.appliedFor}}</span></p>
+            </div>
+        </div>
+        <div class="summary">
+            <p class="summary-text">{{x.summary}}</p>
+        </div>
+        <div class="applied">
+            <p class="recommend">Direction(if any): <span class="recommend-any">{{x.recommendation}}</span></p>
+        </div>
+        <div class="primary-info">
+            <p class="primary-head">Primary Skills: <span class="primary-skill">{{x.primarySkill}}</span> </p>
+            <p class="primary-head">Secondary Skills: <span class="primary-skill">{{x.secondarySkill}}</span> </p>
+        </div>
+        <div class="status">
+            <div class="previous-status" style="border-right: 1px solid #9997a6;">
+                <p class="status-text" matTooltip="Previous Status" style="margin-left: 5px;">Qualitative Assessment</p>
+            </div>
+            <div class="current-status" style="border-right: 1px solid #9997a6;">
+                <p class="status-text" matTooltip="Current Status" matTooltipClass="tooltip">Behavioural Assessment</p>
+            </div>
+            <div class="next-status">
+                <p class="status-text" matTooltip="Next Status" style="margin-right: 3px;">Video Assessment</p>
+            </div>
+        </div>
+        <div class="experience">
+            <div class="left-exp">
+                <p class="total-exp">Experience(yrs): <span class="total">{{x.experience}}</span></p>
+            </div>
+            <div class="right-exp">
+                <p class="created">Created: <span class="create-date">{{x.createdDate}}</span></p>
+            </div>
+        </div>
+        <div class="hiring-details">
+            <div class="profile">
+                <img src="../../assets/hiring1.jpg" alt="user-profile" class="profile-image">
+            </div>
+            <div class="hiring">
+                <p class="top-hiring">Hiring Manager</p>
+                <p class="down-hiring">{{x.hiringManager}}</p>
+            </div>
+        </div>
+    </div>
+</div>

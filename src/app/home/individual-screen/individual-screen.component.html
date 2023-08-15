@@ -1,0 +1,145 @@
+<div class="top-container">
+  <div class="flip-wrapper">
+    <div class="flip-box" [@flipState]="flipCard">
+      <div class="flip-box__side flip-box__front">
+        <div class="pending-profile">
+          <img src="../../assets/pending_image.jpg" alt="user-profile" class="profile-pending">
+        </div>
+        <div class="pending-details">
+          <div class="todos">
+            <p class="pending-todo">Action Pending : <span>8</span></p>
+          </div>
+          <div class="pending">
+            <p class="pending-text" (click)="toggleExpansionPanel(1,'offerLetter')">Offer for Frontend Developer</p>
+            <p class="pending-text" (click)="toggleExpansionPanel(2,'interview1')">Interview for UI Designer</p>
+            <p class="pending-text" (click)="toggleExpansionPanel(3,'behaviouralAssessment')">Assessments for Backend
+              Engineer</p>
+          </div>
+          <div class="flip">
+            <button class="flip-card card-background" (click)="toggleFlip()">Flip for more details</button>
+          </div>
+        </div>
+      </div>
+      <div class="flip-box__side flip-box__back">
+        <div class="flipped">
+          <div class="urgent urgency">
+            <p routerLink="/workflow" class="important-urgent same-status">Urgent</p>
+            <p routerLink="/workflow" (click)="toggleExpansionPanel(1,'interview1')"
+              class="flipped-text red-text pending-text">Interview1 for UI Designer</p>
+            <p routerLink="/workflow" (click)="toggleExpansionPanel(2,'shortlist')"
+              class="flipped-text red-text pending-text">Shortlisting for Frontend Developer</p>
+          </div>
+          <div class="high urgency">
+            <p routerLink="/workflow" class="important-high same-status">High</p>
+            <p routerLink="/workflow" (click)="toggleExpansionPanel(3,'videoAssessment')"
+              class="flipped-text yellow-text pending-text">Assessment for Frontend Developer
+            </p>
+            <p routerLink="/workflow" (click)="toggleExpansionPanel(4,'interview2')"
+              class="flipped-text yellow-text pending-text">Interview2 for UI Designer</p>
+            <p routerLink="/workflow" (click)="toggleExpansionPanel(5,'offerLetter')"
+              class="flipped-text yellow-text pending-text">Offer for Frontend Developer</p>
+          </div>
+          <div class="normal urgency">
+            <p routerLink="/workflow" class="important-normal same-status">Normal</p>
+            <p routerLink="/workflow" (click)="toggleExpansionPanel(6,'qualitativeAssessment')"
+              class="flipped-text blue-text pending-text">Assessments for Backend Engineer
+            </p>
+            <p routerLink="/workflow" (click)="toggleExpansionPanel(7,'hrInterview')"
+              class="flipped-text blue-text pending-text">HR Interview for UI Designer</p>
+            <p routerLink="/workflow" (click)="toggleExpansionPanel(7,'offerLetter')"
+              class="flipped-text blue-text pending-text">Offer for Frontend Developer</p>
+          </div>
+        </div>
+        <div class="flip-back">
+          <button class="flip-card card-background" (click)="toggleFlip()">Flip Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card-container">
+    <div class="pending-profile">
+      <img src="../../assets/job_applied3.jpg" alt="user-profile" class="profile-pending">
+    </div>
+    <div class="pending-details">
+      <div class="todos">
+        <p class="pending-todo">My Jobs : <span>7</span></p>
+      </div>
+      <div class="pending">
+        <p class="pending-text" [routerLink]="['/jobs/reqdet', x.id, 'jobdet']" [queryParams]="{ id: x.id }"
+          *ngFor="let x of jsonData">{{x.jobTitle}}</p>
+      </div>
+      <div class="flip">
+        <button class="flip-card card-background" routerLink="/home/myjob">My jobs</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="pending-profile">
+      <img src="../../assets/referal2.png" alt="user-profile" class="profile-pending">
+    </div>
+    <div class="pending-details">
+      <div class="todos">
+        <p class="pending-todo">Jobs Referred : <span>8</span></p>
+      </div>
+      <div class="pending">
+        <p class="pending-text" *ngFor="let x of candidatesData" [routerLink]="['/candidate/workflow', x.id]"
+          [queryParams]="{ id: x.id }">{{x.JobTitle.name}} for Frontend Developer</p>
+      </div>
+      <div class="flip">
+        <button class="flip-card card-background" routerLink="/home/referal">More Referral</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-container">
+  <div class="bottom-head">
+    <p class="bottom-all">Newest Jobs Listing</p>
+    <button class="bottom-direct card-background" routerLink="/jobs/alljobs">All Jobs</button>
+  </div>
+  <div class="jobs-container">
+    <div class="jobcard-container" *ngFor="let x of jsonData">
+      <div class="top-card" (click)="routeToRequsitionDetails(x.id)">
+        <div class="card-title">
+          <p class="title">{{x.jobTitle}}</p>
+        </div>
+      </div>
+      <div class="summary">
+        <p class="summary-text">{{x.jobDescription}}</p>
+      </div>
+      <div class="card-info">
+        <div class="first-cardinfo">
+          <div class="team">
+            <p class="team-name">Primary Tech</p>
+            <ul>
+              <li class="team-count" *ngFor="let primary of x.primary.split(',').slice(0,3)">{{primary}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="second-cardinfo">
+          <div class="publish">
+            <p class="team-name">Secondary Tech</p>
+            <ul>
+              <li class="team-count" *ngFor="let secondary of x.secondary.split(',').slice(0,3)">{{secondary}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="hiring-details">
+        <div class="hiring-profile">
+          <img src="../../../assets/image8.jpg" alt="user-profile" class="profile-image">
+        </div>
+        <div class="hiring">
+          <p class="top-hiring">Hiring Manager</p>
+          <p class="down-hiring">{{x.hiringManager}}</p>
+        </div>
+      </div>
+      <div class="sharing">
+        <button class="refer card-background" (click)="openDialogComponent()">Refer</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="top-container">
+    <h1 mat-dialog-title>Requisition Referral</h1>
+    <mat-dialog-content>
+        <form [formGroup]="referForm">
+            <div class="form-container">
+                <div class="inline-container" formGroupName="candidateDetails">
+                    <p class="head-text">Candidate Details</p>
+                    <mat-form-field appearance="fill" style="width: 200px;margin-right: 10px;">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="eg. Davy" formControlName="firstName">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" style="width: 200px;margin-right: 10px;">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="eg. Jones" formControlName="lastName">
+                    </mat-form-field>
+                </div>
+                <div class="next-line" formGroupName="candidateDetails">
+                    <mat-form-field appearance="fill" style="width: 200px;margin-right: 10px;">
+                        <mat-label>Contact Info</mat-label>
+                        <input matInput placeholder="eg. 9876543210" formControlName="contactInfo">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" style="width: 200px;">
+                        <mat-label>Email ID</mat-label>
+                        <input matInput placeholder="eg. davy.jones@gmail.com" formControlName="email">
+                    </mat-form-field>
+                </div>
+                <div class="employee" formGroupName="employeeDetails">
+                    <p class="head-text">Employee Details</p>
+                    <mat-form-field appearance="fill" style="width: 200px;margin-right: 10px;">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="eg. Davy" formControlName="firstName">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" style="width: 200px;">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="eg. Jones" formControlName="lastName">
+                    </mat-form-field>
+                </div>
+                <div class="sharing">
+                    <div class="left-sharing">
+                        <p class="head-text">or Share With :</p>
+                    </div>
+                    <div class="right-sharing">
+                        <img src="../../assets/whatsapp.png" alt="whatsapp-image" class="image-icon">
+                        <img src="../../assets/linkedin.png" alt="whatsapp-image" class="image-icon">
+                        <img src="../../assets/google-plus.png" alt="whatsapp-image" class="image-icon">
+                        <img src="../../assets/discord.png" alt="whatsapp-image" class="image-icon">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-raised-button mat-dialog-close cdkFocusInitial color="warn">Cancel</button>
+        <button mat-raised-button color="primary" (click)="postFormControls()">Submit</button>
+    </mat-dialog-actions>
+</div>

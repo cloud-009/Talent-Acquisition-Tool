@@ -1,0 +1,248 @@
+.list-container {
+    margin-top: 5rem;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 85%;
+
+}
+
+.left-top {
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+    float: left;
+    width: 70%;
+}
+
+.top-title {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.progress {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
+    background-color: #fafafa;
+}
+
+.pi-angle-double-right {
+    cursor: pointer;
+}
+
+.status-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box-text {
+    background-color: white;
+    border: 1px solid #666;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.top-progress {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.progress-status {
+    background-color: #f2f2f2;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.good {
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.average {
+    background-color: orange;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 10px;
+    color: white;
+}
+
+.poor {
+    background-color: red;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 10px;
+    color: white;
+}
+
+.progress-text {
+    background-color: #f2f2f2;
+    margin: 5px 0 0;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+.top-title .title {
+    font-size: 1.5rem;
+    font-weight: 650;
+    color: #1a1a1a;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.details {
+    color: #1a1a1a;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 80%;
+}
+
+.due {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.due .due-same {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #595959;
+}
+
+.check-person {
+    color: red;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+}
+
+.tags .same-tag {
+    font-size: 0.9rem;
+    background-color: var(--job-head);
+    color: white;
+    padding: 2px 20px;
+    border-radius: 10px;
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+}
+
+.status .top-status {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.status .bottom-status {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.status-text {
+    background-color: white;
+    border: 1px solid #666;
+    border-radius: 10px;
+    padding: 2px 20px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.status-story {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4d4d4d;
+    text-transform: capitalize;
+}
+
+.icons {
+    display: block;
+}
+
+.status-text {
+    width: 110px;
+    display: inline-block;
+}
+
+/* Media Queries */
+@media screen and (max-width:425px) {
+    .pi-angle-double-right {
+        display: none;
+    }
+
+    .good {
+        padding: 5px 10px;
+    }
+
+    .details {
+        display: none;
+    }
+
+    .tags .same-tag {
+        font-size: 0.7rem;
+        background-color: #678983;
+        color: white;
+        padding: 2px 0px;
+        border-radius: 10px;
+        width: 65px;
+        text-align: center;
+    }
+
+    .tags {
+        gap: 5px;
+    }
+
+    .due .due-same {
+        font-size: 0.7rem;
+        display: inherit;
+
+    }
+
+    .top-title .title {
+        font-size: 1.3rem;
+    }
+
+    .progress {
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+
+    .box-text {
+        padding: 10px 0px;
+        font-size: 0.469rem;
+    }
+}

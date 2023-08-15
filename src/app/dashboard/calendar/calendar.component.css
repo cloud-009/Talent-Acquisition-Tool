@@ -1,0 +1,30 @@
+.top-container{
+    width: 80%;
+    /* height:30%; */
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+/* .my-chart {
+    margin-top: 3rem !important;
+}   */
+
+
+@media screen and (min-width:425px) and (max-width:768px) {
+    .top-container{
+        overflow: hidden;
+    }
+        /* .line-chart .p-chart-series-line .p-chart-point {
+            r: 4px;
+    } */
+
+}
+@media screen and (min-width:769px) and (max-width:1024px) {
+    .top-container{
+        overflow: hidden;
+    }
+    
+     /* .line-chart .p-chart-series-line .p-chart-point {
+            r: 4px;
+    } */
+
+}

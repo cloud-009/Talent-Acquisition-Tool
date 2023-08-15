@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.pie {
+    width: 45%;
+    margin-top: 35px;
+    margin-left: 20px;
+
+}
+
+.pie-drop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+input[type='date'] {
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+/* .sca-drop{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.scatter{
+    width: 60%;
+} */

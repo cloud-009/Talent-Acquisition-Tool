@@ -1,0 +1,71 @@
+#top-container {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    gap: 20px;
+
+}
+
+.bar {
+    width: 45%;
+    height: 350px;
+    margin-top: 20px;
+
+
+}
+
+.horizontal {
+    width: 45%;
+    margin-top: 22px;
+
+}
+
+.horizontal-drop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+input[type='date'] {
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.doughnut {
+    width: 45%;
+    margin: 20px auto;
+
+}
+
+.do-drop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-left: 20px;
+}
+
+.line-drop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.line {
+    width: 45%;
+    height: 350px;
+    margin-left: 20px;
+}
+
+.chart-container{
+    margin-left: 80px;
+}

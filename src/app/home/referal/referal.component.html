@@ -1,0 +1,23 @@
+<div class="top-container">
+    <div class="top-head">
+        <div class="head-content">
+            <p class="head">Reffered jobs</p>
+        </div>
+        <div class="content">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle right-fit shadow-none" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Fit Grid To Screen
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" (click)="sizeToFit()">Fit To Size</a></li>
+                    <li><a class="dropdown-item" (click)="autoSizeAll(false)">Auto-Size All</a></li>
+                    <li><a class="dropdown-item" (click)="autoSizeAll(true)">Auto-Size(skip header)</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ag-grid-angular class="ag-theme-alpine" [rowData]="rowData" (columnResized)="onColumnResized($event)"
+        (gridReady)="onGridReady($event)" [columnDefs]="colDefs">
+    </ag-grid-angular>
+</div>

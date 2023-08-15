@@ -1,0 +1,18 @@
+<div class="top-container">
+    <div class="card">
+        <!-- <select [(ngModel)]="selectedStatus" (change)="updateLineChart(selectedStatus)">
+            <option value="Selected">Selected</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Rejected">Rejected</option>
+          </select> -->
+        <p-chart type="line" [data]="lineChartData" id="linedata" [options]="basicOptions">          
+        </p-chart>
+    </div>
+    
+</div>
+
+<!-- <div class="top-container" style="align-items:center">
+    <canvas baseChart width="600" height="600" [type]="'line'" [data]="lineChartData" [options]="lineChartOptions"
+        [legend]="lineChartLegend">
+    </canvas>
+</div> -->

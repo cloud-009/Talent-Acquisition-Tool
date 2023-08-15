@@ -1,0 +1,89 @@
+<div id="top-container">
+    <div class="bar same">
+        <div class="horizontal-drop">
+            <div class="dropdown">
+                <select class="form-select col-12" aria-label="Default select example">
+                    <option selected>Department</option>
+                    <option value="1">Reporting Manager</option>
+                    <option value="2">Manager</option>
+                    <option value="3">Hr</option>
+                </select>
+            </div>
+            <div class="date">
+                <input type="date">
+            </div>
+            <div class="date">
+                <input type="date">
+            </div>
+        </div>
+
+        <p-chart type="bar" height="350px" width="500px" [data]="stackedData" [options]="stackedOptions"></p-chart>
+    </div>
+
+    <div class="horizontal same">
+        <div class="horizontal-drop">
+            <div class="dropdown">
+                <select class="form-select col-12" aria-label="Default select example">
+                    <option selected>Department</option>
+                    <option value="1">Reporting Manager</option>
+                    <option value="2">Manager</option>
+                    <option value="3">Hr</option>
+                </select>
+            </div>
+            <div class="date">
+                <input type="date">
+            </div>
+            <div class="date">
+                <input type="date">
+            </div>
+        </div>
+        <p-chart type="bar" height="350px" width="500px" [data]="horizontalData"
+            [options]="horizontalOptions"></p-chart>
+    </div>
+
+    <div class="line same">
+        <div class="line-drop">
+            <div class="dropdown">
+                <select class="form-select col-12" aria-label="Default select example">
+                    <option selected>Department</option>
+                    <option value="1">Reporting Manager</option>
+                    <option value="2">Manager</option>
+                    <option value="3">Hr</option>
+                </select>
+            </div>
+            <div class="date">
+                <input type="date">
+            </div>
+            <div class="date">
+                <input type="date">
+            </div>
+        </div>
+
+        <p-chart type="line" height="350px" width="500px" [data]="basicData" [options]="basicOptions"></p-chart>
+    </div>
+
+    <div class=" doughnut same">
+        <div class="do-drop">
+            <div class="dropdown">
+                <select class="form-select col-12" aria-label="Default select example">
+                    <option selected>Department</option>
+                    <option value="1">Reporting Manager</option>
+                    <option value="2">Manager</option>
+                    <option value="3">Hr</option>
+                </select>
+            </div>
+            <div class="date">
+                <input type="date">
+            </div>
+            <div class="date">
+                <input type="date">
+            </div>
+        </div>
+        <div class="chart-container">
+            <p-chart type="doughnut" height="350px" [data]="data" [options]="chartOptions"></p-chart>
+        </div>
+    </div>
+</div>
+<div>
+    <app-card></app-card>
+</div>

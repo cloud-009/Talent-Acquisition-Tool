@@ -1,0 +1,267 @@
+h1 {
+  font-family: "Signika Negative", sans-serif;
+  margin: 10px;
+  color: #181d31;
+  font-weight: 600;
+}
+
+.row {
+  margin-top: 5px;
+  width: 100%;
+}
+
+/* button */
+.btn-group {
+  margin: 5px;
+  gap: 10px;
+}
+.select_clr {
+  width: 200px;
+  color: #678983;
+}
+
+.head {
+  text-align: right;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #181d31;
+  font-size: medium;
+}
+
+.view {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* media  */
+
+@media only screen and (max-width: 600px) {
+  .head {
+    text-align: left;
+  }
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .view {
+    position: absolute;
+    right: 30px;
+    margin-top: 5px;
+  }
+  
+}
+
+/* cards */
+
+.check-card {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  min-height: 320px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px #a6a6a6;
+  cursor: pointer;
+  transition: ease-in 0.2s;
+  background-color: white;
+}
+
+.card-container:hover {
+  transform: scale(1.03);
+}
+
+.jobcard-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  min-height: 320px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px #a6a6a6;
+  cursor: pointer;
+  transition: ease-in 0.2s;
+  background-color: white;
+}
+
+.jobcard-container:hover {
+  transform: scale(1.07);
+}
+
+.top-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #d9d9d9;
+  height: 60px;
+  align-items: center;
+  padding: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--job-head);
+}
+
+.card-title {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  margin: 5px 0 0 5px;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+}
+
+.job-id {
+  font-size: small;
+  font-weight: 400;
+  color: white;
+  margin: 1px;
+}
+
+.pi-ellipsis-v {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hiring-details {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.profile-image {
+  width: 30px;
+  height: 30px;
+  margin: 13px 0 0 4px;
+  border-radius: 50%;
+}
+
+.hiring {
+  display: flex;
+  flex-direction: column;
+  line-height: 10px;
+  margin: 10px 0 0 0;
+}
+
+.top-hiring {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4d4d4d;
+}
+
+.down-hiring {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #4d4d4d;
+  font-weight: 600;
+}
+
+.summary {
+  display: flex;
+}
+
+.summary-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 2px 3px;
+  color: #4d4d4d;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #d9d9d9;
+}
+
+.first-cardinfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  line-height: 10px;
+  margin-top: 2px;
+  border-right: 1px solid #d9d9d9;
+}
+
+.second-cardinfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  line-height: 10px;
+  margin-top: 2px;
+}
+
+.team {
+  margin: 5px 0 0 10px;
+}
+
+.publish {
+  margin: 5px 0 0 10px;
+}
+
+.team-name {
+  font-size: 0.9rem;
+  padding: 2px 0;
+  font-weight: 500;
+  color: #4d4d4d;
+  text-align: center;
+  border-bottom: 1px solid #181d31;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.team-count {
+  list-style-type: none;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #333;
+  margin-left: -20px;
+}
+
+.sharing {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.apply {
+  padding: 5px 20px;
+  width: 80px;
+  margin: 10px 0 0;
+  border: none;
+  background-color: #678983;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.refer {
+  padding: 5px;
+  text-align: center;
+  font-weight: 550;
+}

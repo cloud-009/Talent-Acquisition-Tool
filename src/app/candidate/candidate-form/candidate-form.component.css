@@ -1,0 +1,220 @@
+.container {
+    width: 80%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    align-items: center;
+    height: 580px;
+    border-radius: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 5px auto 0;
+    box-shadow: 6px 8px 12px var(--candidate-head);
+
+}
+
+.container .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-head {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    margin-top: 10px;
+    color: #1a1a1a;
+}
+
+.title-button {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: var(--candidate-head);
+    color: white;
+    padding: 5px 20px;
+    margin: 17px 0 10px 0;
+    border: none;
+    border-radius: 5px;
+    transition: scale 100ms ease;
+    box-shadow: 3px 3px 6px #4d4d4d;
+}
+
+.title-button:hover {
+    transform: scale(1.03);
+}
+
+.content form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 15px 0 12px 0;
+}
+
+form .user-details .input-box {
+    margin-bottom: 10px;
+    width: calc(100% / 3 - 15px);
+}
+
+form .input-box span.details {
+    display: block;
+    font-weight: 500;
+    /* margin-bottom: 5px; */
+}
+
+
+.user-details .input-box input {
+    height: 40px;
+    width: 250px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .form-control .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: var(--candidate-head);
+}
+
+form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form .category {
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+form .category label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+form .category label .dot {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #d9d9d9;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two,
+#dot-3:checked~.category label .three {
+    background: #9b59b6;
+    border-color: #d9d9d9;
+}
+
+form input[type="radio"] {
+    display: none;
+}
+
+form .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    gap: 40px;
+}
+
+form .button .button-submit {
+    height: 80%;
+    width: 25%;
+    border-radius: 5px;
+    align-items: center;
+    border: none;
+    color: #fafafa;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: scale 0.3s ease;
+    /* background: linear-gradient(135deg, #678983, #E6DDC4); */
+    background-color: var(--candidate-head);
+    margin: 0px 5px;
+    box-shadow: 3px 3px 6px #4d4d4d;
+}
+
+form .button .button-cancel {
+    height: 80%;
+    width: 25%;
+    border-radius: 5px;
+    align-items: center;
+    border: none;
+    color: #fafafa;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-color: var(--job-head);
+    transition: scale 0.3s ease;
+    box-shadow: 3px 3px 6px #4d4d4d;
+}
+
+form .button .button-submit:hover {
+    /* background: linear-gradient(-135deg, #678983, #E6DDC4); */
+    transform: scale(1.03);
+}
+
+form .button .button-cancel:hover {
+    transform: scale(1.03);
+}
+
+input::placeholder {
+    color: #a6a6a6;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+input::-moz-placeholder{
+    color: #8c8c8c;
+    letter-spacing: 1px;
+}
+
+@media(max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .category {
+        width: 100%;
+    }
+
+    .content form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .button {
+        justify-content: flex-start !important;
+    }
+}
+
+@media(max-width: 459px) {
+    .container .content .category {
+        flex-direction: column;
+    }
+}

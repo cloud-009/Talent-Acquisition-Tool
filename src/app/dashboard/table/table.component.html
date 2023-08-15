@@ -1,0 +1,52 @@
+<div class="top-container">
+    <div class="heading-top">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="search">
+                <strong class="fa-solid fa-magnifying-glass"></strong>
+            </span>
+            <input type="text" class="form-control" placeholder="Search from title and description" aria-label="search"
+                aria-describedby="search" [(ngModel)]="searchString">
+        </div>
+        <div class="export">
+            <button class="btn" style="background-color: var(--job-head); color: white; font-weight: 600;"
+                (click)="exportTableToExcel()">Export to Excel</button>
+        </div>
+    </div>
+    <table class="table" id="export-table">
+        <thead style="background-color: var(--job-head);">
+            <tr>
+                <th class="head-top">Job-ID</th>
+                <th class="head-top">Job-Title</th>
+                <th class="head-top">Manager</th>
+                <th class="head-top">Description</th>
+                <th class="head-top">Date Posted</th>
+                <th class="head-top">Progress</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p } | table: searchString"
+                class="table-row">
+                <td class="jobid">{{user.jobId}}</td>
+                <td class="jobtitle">{{ user.jobTitle }}</td>
+                <td class="manager">{{ user.hiringManager }}</td>
+                <td class="description">{{ user.description }}</td>
+                <td class="dateposted">{{ user.datePosted }}</td>
+                <td class="status">
+                    <p class="badge" [ngClass]="{
+                        'bg-success' : user.tag === 'Hired',
+                        'bg-danger' : user.tag === 'Rejected',
+                        'bg-secondary' : user.tag === 'Complete',
+                        'bg-primary' : user.tag === 'Progress'
+                    }">{{user.tag}}</p>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

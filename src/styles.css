@@ -1,0 +1,174 @@
+/* @import '../node_modules/@syncfusion/ej2-material-theme/styles/material.css'; */
+/* You can add global styles to this file, and also import other style files */
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --job-head: #716F81;
+    --candidate-head: #6B7AA1;
+    --navbar-active: #ccc;
+    --navbar-active-text: #000;
+    --text-over: #fafafa;
+    --home-button-color: #6B7AA1;
+}
+
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+    background-color: green;
+    color: #fff;
+}
+
+.mat-step-header .mat-step-icon-state-edit {
+    background-color: rgba(0, 0, 0, .54);
+
+}
+
+.fc-event-time {
+    display: none !important;
+}
+
+a.fc-col-header-cell-cushion {
+    color: black !important;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding: 5px !important;
+}
+
+.fc-event-title.fc-sticky {
+    font-size: 0.9rem;
+    font-weight: 550;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.fc-event-title-container {
+    text-align: center;
+}
+
+.fc-scrollgrid-sync-inner {
+    background-color: #fff !important;
+}
+
+.fc-daygrid-day-frame.fc-scrollgrid-sync-inner {
+    background-color: #fafafa !important;
+}
+
+button.fc-prev-button.fc-button.fc-button-primary {
+    background-color: var(--job-head) !important;
+    outline: none !important;
+    margin-right: 10px;
+    border: 1px solid var(--job-head) !important;
+}
+
+button.fc-next-button.fc-button.fc-button-primary {
+    background-color: var(--job-head) !important;
+    outline: none !important;
+    border: 1px solid var(--job-head) !important;
+}
+
+button.fc-today-button.fc-button.fc-button-primary {
+    background-color: var(--job-head) !important;
+    border: 1px solid var(--job-head) !important;
+    text-transform: uppercase;
+}
+
+.fc.fc-theme-standard .fc-toolbar .fc-button:disabled {
+    opacity: 0.6;
+    color: #ffffff;
+    background: var(--job-head) !important;
+    border: 1px solid var(--job-head) !important;
+}
+
+button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active {
+    background-color: var(--job-head) !important;
+    border: 1px solid var(--job-head) !important;
+    margin-right: 10px;
+    color: white;
+    font-size: 0.9rem !important;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+button.fc-dayGridMonth-button.fc-button.fc-button-primary {
+    background-color: var(--job-head) !important;
+    margin-right: 10px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+button.fc-timeGridWeek-button.fc-button.fc-button-primary {
+    background-color: var(--job-head) !important;
+    border: 1px solid var(--job-head) !important;
+    margin-right: 10px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+button.fc-timeGridDay-button.fc-button.fc-button-primary {
+    background-color: var(--job-head) !important;
+    border: 1px solid var(--job-head) !important;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+button.fc-dayGridWeek-button.fc-button.fc-button-primary {
+    background-color: var(--job-head) !important;
+    border: 1px solid var(--job-head) !important;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+.fc.fc-theme-standard .fc-toolbar .fc-button.fc-dayGridMonth-button,
+.fc.fc-theme-standard .fc-toolbar .fc-button.fc-timeGridWeek-button,
+.fc.fc-theme-standard .fc-toolbar .fc-button.fc-timeGridDay-button {
+    background: #ffffff;
+    border: 1px solid #ced4da;
+    color: white;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.fc.fc-theme-standard .fc-toolbar .fc-button.fc-dayGridMonth-button:hover,
+.fc.fc-theme-standard .fc-toolbar .fc-button.fc-timeGridWeek-button:hover,
+.fc.fc-theme-standard .fc-toolbar .fc-button.fc-timeGridDay-button:hover {
+    background: #e9ecef;
+    border-color: #ced4da;
+    color: white;
+}
+
+
+.fc-event-title-container {
+    margin: 10px;
+}
+
+a.fc-event {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    -webkit-box-orient: horizontal;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}

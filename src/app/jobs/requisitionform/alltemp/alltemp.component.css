@@ -1,0 +1,49 @@
+.jobcomplete{
+    text-align: left;
+    height: 50px;
+    top: 8%;
+    margin-bottom: 2%;
+    background-color: #fff;
+    color: #0A2647;
+   
+}
+.jobcomplete:hover {
+   
+   background-color: #A0C3D2;
+   color: #fff;
+    
+}
+
+.jobtitle{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+.alignn{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.align{
+   
+    margin-top: -9%;
+}
+.align1{
+    margin-left: 80%;
+    margin-top: -8%;
+}
+.penclr{
+    color: #fff;
+    
+}
+
+.penclr:hover{
+   color: #0A2647;
+   
+}
+:host ::ng-deep .loader circle{   
+    stroke: #fff;
+}

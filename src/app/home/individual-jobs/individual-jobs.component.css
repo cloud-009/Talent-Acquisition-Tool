@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+
+
+.top-container {
+  width: 97%;
+  margin: 30px auto 0;
+}
+
+.top-head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  font-family: 'Signika Negative', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  margin: 5px 0 0;
+}
+
+.right-fit {
+  background-color: var(--job-head);
+  border: 1px solid var(--job-head);
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.right-fit:active {
+  background-color: var(--candidate-head);
+  color: white;
+}
+
+.dropdown-menu {
+  min-width: 130px;
+}
+
+.dropdown-item {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+.dropdown-item:active {
+  background-color: #d9d9d9;
+}
+
+.ag-theme-alpine {
+  height: 472px;
+  width: 100%;
+  margin: 10px auto 0;
+  background-color: white;
+}
+
+::ng-deep .same-header {
+  color: #f2f2f2;
+  width: 100px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+}
+
+::ng-deep .ag-theme-alpine .ag-header {
+  --ag-header-background-color: var(--job-head);
+}
+
+
+::ng-deep .ag-theme-alpine .ag-cell,
+.ag-theme-alpine .ag-full-width-row .ag-cell-wrapper.ag-row-group {
+  --ag-internal-calculated-line-height: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+
+/* cell styling for arrows */
+
+
+::ng-deep .candidate-class {
+  position: relative;
+  background-color: #ff3333;
+  color: white;
+  border: 1px solid #fff !important;
+}
+
+::ng-deep .candidate-class::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #fafafa;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+::ng-deep .candidate-class::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #ff3333;
+  border-top: 20px solid #fff;
+  border-bottom: 20px solid #fff;
+}
+
+::ng-deep .screen-class {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  background: #ff5c33;
+  color: white;
+  border: 1px solid #fff !important;
+}
+
+::ng-deep .screen-class::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #fafafa;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+::ng-deep .screen-class::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #ff5c33;
+  border-top: 20px solid #fff;
+  border-bottom: 20px solid #fff;
+}
+
+::ng-deep .shortlist-class {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  background: #ff8533;
+  color: white;
+  border: 1px solid #fff !important;
+}
+
+::ng-deep .shortlist-class::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #fafafa;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+::ng-deep .shortlist-class::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #ff8533;
+  border-top: 20px solid #fff;
+  border-bottom: 20px solid #fff;
+}
+
+
+
+
+
+::ng-deep .aptitude-class {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  background: #ffa64d;
+  color: white;
+  border: 1px solid #fff !important;
+}
+
+::ng-deep .aptitude-class::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #fafafa;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+::ng-deep .aptitude-class::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #ffa64d;
+  border-top: 20px solid #fff;
+  border-bottom: 20px solid #fff;
+}
+
+
+
+::ng-deep .behaviour-class {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  background: #ff8c1a;
+  color: white;
+  border: 1px solid #fff !important;
+}
+
+::ng-deep .behaviour-class::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #fafafa;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+::ng-deep .behaviour-class::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #ff8c1a;
+  border-top: 20px solid #fff;
+  border-bottom: 20px solid #fff;
+}
+
+
+
+::ng-deep .assessment-class {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  background: #e6b800;
+  color: white;
+  border: 1px solid #fff !important;
+}
+
+::ng-deep .assessment-class::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #fafafa;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+::ng-deep .assessment-class::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #e6b800;
+  border-top: 20px solid #fff;
+  border-bottom: 20px solid #fff;
+}
+
+
+::ng-deep .int1-class {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  background: #ffcc00;
+  color: white;
+  border: 1px solid #fff !important;
+}
+
+::ng-deep .int1-class::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #fafafa;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+::ng-deep .int1-class::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #ffcc00;
+  border-top: 20px solid #fff;
+  border-bottom: 20px solid #fff;
+}
+
+
+::ng-deep .int2-class {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  background: #cccc00;
+  color: white;
+  border: 1px solid #fff !important;
+}
+
+::ng-deep .int2-class::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #fafafa;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+::ng-deep .int2-class::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #cccc00;
+  border-top: 20px solid #fff;
+  border-bottom: 20px solid #fff;
+}
+
+
+::ng-deep .hr-class {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  background: #4d9900;
+  color: white;
+  border: 1px solid #fff !important;
+}
+
+::ng-deep .hr-class::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #fafafa;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+::ng-deep .hr-class::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #4d9900;
+  border-top: 20px solid #fff;
+  border-bottom: 20px solid #fff;
+}

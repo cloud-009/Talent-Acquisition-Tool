@@ -1,0 +1,26 @@
+.top-container {
+    padding: 10px 20px 0;
+}
+
+.inline-container {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.head-text{
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #4d4d4d;
+}
+
+.sharing{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.image-icon{
+    margin-right: 10px;
+    cursor: pointer;
+}

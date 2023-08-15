@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
+
+.outer-container {
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    min-height: 100vh;
+    background-color: #a1a4ad;
+    background-image: linear-gradient(to right, rgb(213, 233, 180), rgba(148, 148, 184));
+}
+
+.container {
+    margin: 5% 0 4% 0;
+    text-align: center;
+    background-color: rgb(33, 41, 66);
+    border-radius: 10px;
+    width: 400px;
+    height: 500px;
+    box-shadow: 3px 3px 10px black;
+}
+
+.box h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #5c6bc0;
+    font-size: 18px;
+    margin-top: 94px;
+}
+
+.box h4 span {
+    color: #dfdeee;
+    font-weight: lighter;
+}
+
+.box h5 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 13px;
+    color: #a1a4ad;
+    letter-spacing: 1.5px;
+    margin-top: -15px;
+    margin-bottom: 50px;
+}
+
+.box input {
+    display: block;
+    margin: 30px auto;
+    background: #262e49;
+    border: 0;
+    border-radius: 5px;
+    padding: 14px 10px;
+    width: 320px;
+    outline: none;
+    color: #d6d6d6;
+}
+
+::-webkit-input-placeholder {
+    color: #565f79;
+}
+
+.box input:focus {
+    border: 1px solid #79A6FE;
+
+}
+
+.btn {
+    width: 20rem;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 20px;
+}
+
+.red {
+    color: #ffad99;
+    float: left;
+    margin: 0 0 0 20px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid #ff5c33;
+    border-radius: 10px;
+}

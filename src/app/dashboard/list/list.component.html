@@ -1,0 +1,55 @@
+<div class="list-container">
+    <div *ngFor="let x of statusOfRequisition; let i as index">
+        <div class="top-container">
+            <div class="left-top">
+                <div class="top-title">
+                    <strong class="pi pi-angle-double-right"></strong>
+                    <p class="title" (click)="routeToRequisition(x.data.id)">{{x.data.jobTitle}}</p>
+                </div>
+                <div class="top-details">
+                    <p class="details">{{x.data.jobDescription}}</p>
+                </div>
+                <div class="due">
+                    <p class="due-text due-same">Start Date:</p>
+                    <p class="due-time due-same">{{x.data.raisedFDate | date}}</p>
+                    <p class="last-check due-same">Due Date: <span class="check-person">{{x.data.raisedTDate |
+                            date}}</span>
+                    </p>
+                </div>
+                <div class="tags" [hidden]="x.data.hideContent">
+                    <div class="first-tag">
+                        <p class="first same-tag">{{x.data.project}}</p>
+                    </div>
+                    <div class="second-tag">
+                        <p class="second same-tag">{{x.data.functionalArea}}</p>
+                    </div>
+                    <div class="third-tag">
+                        <p class="third same-tag">{{x.data.reportingManager}}</p>
+                    </div>
+                </div>
+                <div class="status" [hidden]="x.data.hideContent">
+                    <div class="top-status">
+                        <p class="status-story">{{x.data.primary}}</p>
+                    </div>
+                    <div class="bottom-status">
+                        <p class="status-story">{{x.data.rolesResponsibilities}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="top-progress">
+                    <p class="badge good badge-lg" [ngClass]="{
+                    'bg-success': x.status === 'Good',
+                    'bg-warning': x.status === 'Average',
+                    'bg-danger': x.status === 'Poor'
+                }">{{x.status}}</p>
+                </div>
+                <div class="status-box">
+                    <p class="box-text">Completed: <span>0</span></p>
+                    <p class="box-text">Openings: <span>{{jobCount[x.data.jobTitle] | json}}</span></p>
+                </div>
+            </div>
+        </div>
+        <hr *ngIf="i % 2 !== 0" style="background-color: #fafafa;">
+    </div>
+</div>

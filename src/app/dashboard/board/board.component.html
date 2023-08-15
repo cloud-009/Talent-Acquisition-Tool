@@ -1,0 +1,179 @@
+<div class="select-container">
+  <div>
+    <select class="custom-select dropbutton shadow-none" (change)="selectChange($event)">
+      <option value="urgent">Urgency</option>
+      <option value="reporting">Reporting Manager</option>
+      <option value="primary">Primary Technology</option>
+      <option value="designation">Designation</option>
+      <option value="hiring">Hiring Manager</option>
+    </select>
+  </div>
+</div>
+
+
+<div class="top-container">
+  <div class="urgency-container" *ngIf="displayUrgent">
+    <div class="first-container">
+      <div class="heading urgent">
+        <p class="head">High</p>
+      </div>
+      <div class="card-container yellow-box" *ngFor="let x of jsonData">
+        <div class="left-container" *ngIf="x.urgency === 'High'">
+          <div class="left-card">
+            <p class="left-text">{{x.jobTitle}}</p>
+            <div class="left-middle">
+              <strong class="fa-solid fa-flag red "></strong>
+              <p class="date">{{x.raisedTDate | date}}</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <img src="../assets/hiring1.jpg" alt="profile" class="profile-red">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="second-container">
+      <div class="heading high">
+        <p class="head">Medium</p>
+      </div>
+      <div class="card-container yellow-box" *ngFor="let x of jsonData">
+        <div class="left-container" *ngIf="x.urgency === 'Medium'">
+          <div class="left-card">
+            <p class="left-text">{{x.jobTitle}}</p>
+            <div class="left-middle">
+              <strong class="fa-solid fa-flag yellow "></strong>
+              <p class="date">{{x.raisedTDate | date}}</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <img src="../assets/hiring1.jpg" alt="profile" class="profile-yellow">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="third-container">
+      <div class="heading normal">
+        <p class="head">Low</p>
+      </div>
+      <div class="card-container blue-box" *ngFor="let x of jsonData">
+        <div class="left-container" *ngIf="x.urgency === 'Low'">
+          <div class="left-card">
+            <p class="left-text">{{x.jobTitle}}</p>
+            <div class="left-middle">
+              <strong class="fa-solid fa-flag blue "></strong>
+              <p class="date">{{x.raisedTDate | date}}</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <img src="../assets/hiring1.jpg" alt="profile" class="profile-blue">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="main-container">
+  <div class="grid-container">
+  <div class="reporting" *ngFor="let manager of reportingManager | keyvalue">
+    <div class="reporting-container group-container" *ngIf="displayReporting">
+      <div class="heading green">
+        <p class="head">{{manager.key}}</p>
+      </div>
+      <div class="card-container green-box" *ngFor="let job of manager.value">
+        <div class="left-container">
+          <div class="left-card" >
+            <p class="left-text" (click)="routeToDetails(job)">{{job.jobTitle}}</p>
+            <div class="left-middle">
+              <p class="date">{{job.raisedFDate | date}}</p>
+              <p class="date-end">{{job.raisedTDate | date}}</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <img src="../assets/hiring1.jpg" alt="profile" class="profile-blue">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+    <div class="grid-container">
+  <div class="primary" *ngFor="let primary of primaryTechnology | keyvalue">
+    <div class="primary-container group-container" *ngIf="displayPrimary">
+      <div class="heading green">
+        <p class="head">{{primary.key}}</p>
+      </div>
+      <div class="card-container green-box" *ngFor="let job of primary.value">
+        <div class="left-container">
+          <div class="left-card">
+            <p class="left-text"  (click)="routeToDetails(job)">{{job.jobTitle}}</p>
+            <div class="left-middle">
+              <p class="date">{{job.raisedFDate | date}}</p>
+              <p class="date-end">{{job.raisedTDate | date}}</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <img src="../assets/hiring1.jpg" alt="profile" class="profile-blue">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+    <div class="grid-container">
+  <div class="designation" *ngFor="let desg of designation | keyvalue">
+    <div class="primary-container group-container" *ngIf="displayDesignation">
+      <div class="heading green">
+        <p class="head">{{desg.key}}</p>
+      </div>
+      <div class="card-container green-box" *ngFor="let job of desg.value">
+        <div class="left-container">
+          <div class="left-card">
+            <p class="left-text"  (click)="routeToDetails(job)">{{job.jobTitle}}</p>
+            <div class="left-middle">
+              <p class="date">{{job.raisedFDate | date}}</p>
+              <p class="date-end">{{job.raisedTDate | date}}</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <img src="../assets/hiring1.jpg" alt="profile" class="profile-blue">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+    <div class="grid-container">
+  <div class="hiring" *ngFor="let hiring of hiringManager | keyvalue">
+    <div class="primary-container group-container" *ngIf="displayHiring">
+      <div class="heading green">
+        <p class="head">{{hiring.key}}</p>
+      </div>
+      <div class="card-container green-box" *ngFor="let job of hiring.value">
+        <div class="left-container">
+          <div class="left-card">
+            <p class="left-text"  (click)="routeToDetails(job)">{{job.jobTitle}}</p>
+            <div class="left-middle">
+              <p class="date">{{job.raisedFDate | date}}</p>
+              <p class="date-end">{{job.raisedTDate | date}}</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <img src="../assets/hiring1.jpg" alt="profile" class="profile-blue">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

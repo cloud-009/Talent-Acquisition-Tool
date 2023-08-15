@@ -1,0 +1,81 @@
+<div class="grid-container">
+<div class="top-container">
+    <div class="card-container" *ngFor="let x of statusOfRequisition" (click)="routeToDetails(x.data.id)">
+        <div class="top-card">
+            <div class="card-title">
+                <p class="title">{{x.data.jobTitle}}</p>
+                <!-- <p class="job-id">P56815</p> -->
+            </div>
+        </div>
+        <div class="summary">
+            <p class="summary-text">{{x.data.jobDescription}}</p>
+        </div>
+        <div class="card-info">
+            <div class="first-cardinfo">
+                <div class="team">
+                    <p class="team-name">Primary Tech</p>
+                    <ul>
+                        <li class="team-count" *ngFor="let primary of x.data.primary.split(',').slice(0,3)">{{primary}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="second-cardinfo">
+                <div class="publish">
+                    <p class="team-name">Secondary Tech</p>
+                    <ul>
+                        <li class="team-count" *ngFor="let secondary of x.data.secondary.split(',').slice(0,3)">
+                            {{secondary}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hiring-details">
+            <div class="profile">
+                <img src="../../../assets/hiring1.jpg" alt="user-profile" class="profile-image">
+            </div>
+            <div class="hiring">
+                <p class="top-hiring">Hiring Manager</p>
+                <p class="down-hiring">{{x.data.hiringManager}}</p>
+            </div>
+        </div>
+        <div class="due due-yellow" [ngClass]="{
+            'bg-success': x.status === 'Good',
+            'bg-warning': x.status === 'Average',
+            'bg-danger': x.status === 'Poor'
+        }">
+            <div class="first-due">
+                <p class="due-count">{{x.days}} days /</p>
+                <p class="due-count">0{{jobCount[x.data.jobTitle]}} openings</p>
+            </div>
+            <div class="due-second">
+                <p class="avg">{{x.status}}</p>
+                <strong class="fa-solid fa-thumbs-up" [ngClass]="{
+                    'thumbs-good': x.status === 'Good',
+                    'thumbs-avg': x.status === 'Average',
+                    'thumbs-poor': x.status === 'Poor'
+                }"></strong>
+            </div>
+        </div>
+        <div class="bottom-info">
+            <div class="first-info">
+                <p class="info-count">{{jobCount[x.data.jobTitle]}}</p>
+                <p class="info-text">Openings</p>
+            </div>
+            <div class="second-info">
+                <p class="info-count">0</p>
+                <p class="info-text process">In Process</p>
+            </div>
+            <div class="third-info">
+                <p class="info-count">0</p>
+                <p class="info-text process">Offered</p>
+            </div>
+            <div class="fourth-info">
+                <p class="info-count">0</p>
+                <p class="info-text">Joined</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

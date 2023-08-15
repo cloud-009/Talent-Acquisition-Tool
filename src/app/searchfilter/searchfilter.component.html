@@ -1,0 +1,173 @@
+<div class="container">
+    <div>
+        <h1>ALL JOBS / MY JOBS</h1>
+    </div>
+    <div class="progress" style="height: 4px;">
+        <div class="progress-bar" role="progressbar" style="width: 100%; background-color: var(--candidate-head); " aria-valuenow="0"
+            aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <button style="margin: 15px 0px 0px 0px;border-radius: 5px; font-weight: 600; "
+                class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Filter Search
+            </button>
+            <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-md-2 head" style="font-weight: 600;color:#272c40">FILTER BY :
+                        </div>
+                        <div class="col-md-8">
+                            <div class="btn-group">
+                                <input type="text" placeholder="JOB TITLE" list="title" class="select_clr form-select"
+                                    [(ngModel)]="selectedvalue">
+                                <datalist id="title">
+                                    <option value="Frontend Developer">Frontend Developer</option>
+                                    <option value="Backend Developer">Backend Developer</option>
+                                </datalist>
+                            </div>
+                            <div class="btn-group">
+                                <input type="text" placeholder="ORGANIZATION" list="Org" class="select_clr form-select"
+                                    [(ngModel)]="selectedvalue1">
+                                <datalist id="Org">
+                                    <option value="Microservices">Microservices</option>
+                                    <option value="CyberSecurity">CyberSecurity</option>
+                                </datalist>
+                            </div>
+                            <div class="btn-group">
+                                <input type="text" placeholder="LOCATION" list="Location" class="select_clr form-select"
+                                    [(ngModel)]="selectedvalue2">
+                                <datalist id="Location">
+                                    <option value="Bangalore">Bangalore</option>
+                                    <option value="Hyderabad">Hyderabad</option>
+                                </datalist>
+                            </div>
+
+                            <div class="btn-group">
+                                <input type="text" placeholder="GRADE" list="Grade" class="select_clr form-select"
+                                    [(ngModel)]="selectedvalue3">
+                                <datalist id="Grade">
+                                    <option value="Level-1">Level-1</option>
+                                    <option value="Level-2">Level-2</option>
+                                    <option value="Level-3">Level-3</option>
+                                </datalist>
+                            </div>
+
+                            <div class="btn-group">
+                                <input type="text" placeholder="REPORTING MANAGER" list="ReportingManager"
+                                    class="select_clr form-select" [(ngModel)]="selectedvalue4">
+                                <datalist id="ReportingManager">
+                                    <option value="George Washington">George Washington</option>
+                                    <option value="Dakota Jhonson">Dakota Jhonson</option>
+                                    <option value="Emilia Clarke">Emilia Clarke</option>
+                                    <option value="Parley">Parley</option>
+                                </datalist>
+                            </div>
+                            
+
+                        </div>
+                        <div class="col-md-2">
+                            <div class="view">
+                                <div>
+                                    <mat-icon aria-hidden="false" fontIcon="list" (click)="changeListDisplay()"></mat-icon>
+                                </div>
+                                <div>
+                                    <mat-icon aria-hidden="false" fontIcon="grid_view"
+                                        (click)="changeCardDisplay()"></mat-icon>
+                                </div>
+                            </div>
+                         <div class="btn-group">
+                                <button class="btn" style="background-color: var(--candidate-head); color: white; margin: 10px 0px 0px 0px;"
+                                    (click)="onbuttonclick()">Search</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- views -->
+    <!-- table view -->
+
+    <table class="table table-bordered " *ngIf="listDisplay" [hidden]="isHeaderHidden">
+        <thead style="background-color: var(--job-head); color: white;">
+            <tr>
+                <th>JOB TITLE</th>
+                <th>ORGANIZATION</th>
+                <th>LOCATION</th>
+                <th>GRADE</th>
+                <th>REPORTING MANAGER</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let RequisitionForm of filteredItems">
+            <tr (click)="routeToRequisition(RequisitionForm.id)" style="cursor: pointer;">
+                <td>{{RequisitionForm.jobTitle}}</td>
+                <td>{{RequisitionForm.organizationUnit}}</td>
+                <td>{{RequisitionForm.jobLocation}}</td>
+                <td>{{RequisitionForm.gradeLevel}}</td>
+                <td>{{RequisitionForm.reportingManager}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- card view -->
+
+    <div class="check-card" *ngIf="cardDisplay">
+        <ng-container class="jobcard-container" *ngFor="let RequisitionForm of filteredItems">
+            <div class="card-container" (click)="routeToRequisition(RequisitionForm.id)">
+                <div class="top-card">
+                    <div class="card-title">
+                        <p class="title">{{RequisitionForm.jobTitle}}</p>
+                    </div>
+                </div>
+                <div class="summary">
+                    <p class="summary-text">{{RequisitionForm.jobDescription}}</p>
+                </div>
+                <div class="card-info">
+                    <div class="first-cardinfo">
+                        <div class="team">
+                            <p class="team-name">Primary Tech</p>
+                            <ul>
+                                <li class="team-count"
+                                    *ngFor="let primary of RequisitionForm.primary.split(',').slice(0,3)">
+                                    {{primary}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="second-cardinfo">
+                        <div class="publish">
+                            <p class="team-name">Secondary Tech</p>
+                            <ul>
+                                <li class="team-count"
+                                    *ngFor="let secondary of RequisitionForm.secondary.split(',').slice(0,3)">
+                                    {{secondary}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="hiring-details">
+                    <div class="hiring-profile">
+                        <img src="../../../assets/image8.jpg" alt="user-profile" class="profile-image">
+                    </div>
+                    <div class="hiring">
+                        <p class="top-hiring">Reporting Manager</p>
+                        <p class="down-hiring">{{RequisitionForm.reportingManager}}</p>
+                    </div>
+                </div>
+                <div class="sharing">
+                    <p class="refer">Organization {{RequisitionForm.organizationUnit}}</p>
+                    <p class="refer">Location {{RequisitionForm.jobLocation}}</p>
+                    <p class="refer">Grade {{RequisitionForm.gradeLevel}}</p>
+
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

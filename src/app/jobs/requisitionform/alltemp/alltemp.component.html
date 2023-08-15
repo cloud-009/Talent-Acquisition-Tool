@@ -1,0 +1,11 @@
+<div *ngFor="let data of formData">
+    <mat-card class="jobcomplete">
+      <mat-card-content class="jobtitle">{{data.jobTitle}}
+
+      </mat-card-content>
+      <div class="alignn">
+        <button mat-button color="primary" (click)="edit(data)" class="align1"><i
+          class="fa fa fa-pencil penclr"></i></button>
+      </div>
+    </mat-card>
+  </div>
