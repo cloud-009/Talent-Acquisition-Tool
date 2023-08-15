@@ -1,27 +1,40 @@
-# TATool
+# Talent Acquisition Tool
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+The Talent Acuisition Tool is a comprehensive solution designed to streamline talent acquisition and human resources processes across the organization.
 
-## Development server
+This application empowers HR professionals and acquisition teams to efficiently manage talent, from sourcing and recruitment to performance assessment and employee development.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Key Features
 
-## Code scaffolding
+* **Unified Talent Pipeline**: Centralize and manage potential candidates profiles, making it easy to track their progress through the hiring process.
+* **Effortless Recruitment**: Streamline the recruitment workflow with automated job postings, candidate tracking, interview scheduling, and communication.
+* **Performance Assessment**: Conduct fair and comprehensive employee evaluations, providing valuable insights for growth and improvement.
+* **Skills Development**:  Identify skill gaps and offer personalized training plans to enhance employee skills and career progression.
+* **Collaborative Workspace**: Foster teamwork by providing a collaborative platform for HR, managers, and employees to communicate, share documents, and set goals.
+* **Data-Driven Insights**: Make informed decisions using real-time analytics and reports on recruitment metrics, employee performance, and more. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Dependencies
 
-## Build
+* **:electron: Angular**
+* **:electron: Angular-Material**
+* **:electron: FullCalendar**
+* **:electron: Ag-Grid-Community**
+* **:electron: ApexCharts**
+* **:electron: SweetAlert2**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Output
 
-## Running unit tests
+![Image](src/assets/home_page.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Image](src/assets/jobs_all.png)
+![Image](src/assets/jobs_createnew.png)
 
-## Running end-to-end tests
+![Image](src/assets/dashboard_list.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![Image](src/assets/candidates_all.png)
+![Image](src/assets/candidate_create.png)
 
-## Further help
+![Image](src/assets/search_jobs.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Image](src/assets/reports.png)
+
